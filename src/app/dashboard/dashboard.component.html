@@ -1,0 +1,13 @@
+<ActionBar title="PHR Dashboard"></ActionBar>
+
+<GridLayout rows="auto, *">
+  <Label text="Connected Devices" class="h2 text-center p-10"></Label>
+  <ListView [items]="devices" row="1">
+    <ng-template let-device="item">
+      <GridLayout columns="auto, *" class="p-10" (tap)="onDeviceTap(device.type)">
+        <Label [text]="device.icon" class="text-2xl"></Label>
+        <Label [text]="device.name" col="1" class="text-lg m-l-10"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>

@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-bar {
+  background-color: #f0f0f0;
+  padding: 10;
+}
+
+.nav-button {
+  width: 50%;
+  text-align: center;
+}
+
+.h2 {
+  font-size: 24;
+  font-weight: bold;
+}
+
+.h3 {
+  font-size: 18;
+  font-weight: bold;
+}
+
+.text-2xl {
+  font-size: 24;
+}
+
+.text-lg {
+  font-size: 18;
+}
+
+.text-sm {
+  font-size: 12;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-green {
+  color: #22c55e;
+}
+
+.text-red {
+  color: #ef4444;
+}
+
+.m-t-10 {
+  margin-top: 10;
+}
+
+.m-b-10 {
+  margin-bottom: 10;
+}
+
+.m-l-10 {
+  margin-left: 10;
+}
+
+.p-10 {
+  padding: 10;
+}

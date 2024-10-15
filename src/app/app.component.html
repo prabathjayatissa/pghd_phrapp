@@ -1,0 +1,7 @@
+<GridLayout rows="*, auto">
+  <page-router-outlet></page-router-outlet>
+  <StackLayout row="1" orientation="horizontal" class="nav-bar">
+    <Button text="Dashboard" [nsRouterLink]="['/dashboard']" class="nav-button"></Button>
+    <Button text="Profile" [nsRouterLink]="['/profile']" class="nav-button"></Button>
+  </StackLayout>
+</GridLayout>

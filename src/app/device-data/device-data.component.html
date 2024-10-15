@@ -1,0 +1,47 @@
+<ActionBar [title]="deviceType + ' Data'"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-10">
+    <Label [text]="'Date: ' + measurementDate" class="text-lg"></Label>
+    <Label [text]="'Time: ' + measurementTime" class="text-lg m-b-10"></Label>
+
+    <ng-container *ngIf="deviceType === 'watch'">
+      <Label text="Steps" class="h3"></Label>
+      <Label [text]="data.steps.value" [class]="isNormal(data.steps) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal range: ' + data.steps.normal.min + ' - ' + data.steps.normal.max" class="text-sm text-center"></Label>
+
+      <Label text="Heart Rate" class="h3 m-t-10"></Label>
+      <Label [text]="data.heartRate.value + ' bpm'" [class]="isNormal(data.heartRate) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal range: ' + data.heartRate.normal.min + ' - ' + data.heartRate.normal.max + ' bpm'" class="text-sm text-center"></Label>
+
+      <Label text="Calories Burned" class="h3 m-t-10"></Label>
+      <Label [text]="data.calories.value + ' cal'" [class]="isNormal(data.calories) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal range: ' + data.calories.normal.min + ' - ' + data.calories.normal.max + ' cal'" class="text-sm text-center"></Label>
+    </ng-container>
+
+    <ng-container *ngIf="deviceType === 'bp'">
+      <Label text="Blood Pressure" class="h3"></Label>
+      <Label [text]="data.systolic.value + '/' + data.diastolic.value + ' mmHg'" 
+             [class]="isNormal(data.systolic) && isNormal(data.diastolic) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal range: ' + data.systolic.normal.min + '/' + data.diastolic.normal.min + ' - ' + data.systolic.normal.max + '/' + data.diastolic.normal.max + ' mmHg'" class="text-sm text-center"></Label>
+
+      <Label text="Pulse" class="h3 m-t-10"></Label>
+      <Label [text]="data.pulse.value + ' bpm'" [class]="isNormal(data.pulse) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal range: ' + data.pulse.normal.min + ' - ' + data.pulse.normal.max + ' bpm'" class="text-sm text-center"></Label>
+    </ng-container>
+
+    <ng-container *ngIf="deviceType === 'ecg'">
+      <Label text="ECG Rhythm" class="h3"></Label>
+      <Label [text]="data.rhythm.value" [class]="isNormal(data.rhythm) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal: ' + data.rhythm.normal" class="text-sm text-center"></Label>
+
+      <Label text="QRS Interval" class="h3 m-t-10"></Label>
+      <Label [text]="data.qrsInterval.value + ' ms'" [class]="isNormal(data.qrsInterval) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal range: ' + data.qrsInterval.normal.min + ' - ' + data.qrsInterval.normal.max + ' ms'" class="text-sm text-center"></Label>
+
+      <Label text="PR Interval" class="h3 m-t-10"></Label>
+      <Label [text]="data.prInterval.value + ' ms'" [class]="isNormal(data.prInterval) ? 'text-2xl text-center text-green' : 'text-2xl text-center text-red'"></Label>
+      <Label [text]="'Normal range: ' + data.prInterval.normal.min + ' - ' + data.prInterval.normal.max + ' ms'" class="text-sm text-center"></Label>
+    </ng-container>
+  </StackLayout>
+</ScrollView>
