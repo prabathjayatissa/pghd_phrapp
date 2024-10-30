@@ -13,7 +13,7 @@
         "build": {
           "copyTo": "./dist/build.ipa"
         },
-        "prod": {
+        "prod": { 
           "combineWithConfig": "build:prod"
         }
       }
@@ -27,10 +27,11 @@
         "build": {
           "copyTo": "./dist/build.apk"
         },
-        "prod": {
+        "prod": { 
           "combineWithConfig": "build:prod"
         }
       }
+      
     },
     "clean": {
       "executor": "@nativescript/nx:build",
