@@ -5,7 +5,6 @@
   "projectType": "application",
   "targets": {
     "ios": {
-      
       "executor": "@nativescript/nx:build",
       "options": {
         "platform": "ios"
@@ -14,7 +13,6 @@
         "build": {
           "copyTo": "./dist/build.ipa"
         },
-        
         "prod": { 
           "combineWithConfig": "build:prod"
         }
